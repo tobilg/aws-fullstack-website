@@ -5,8 +5,6 @@ Resources:
     Type: AWS::ApiGateway::RestApi
     Properties:
       Name: '${self:custom.domainName} API'
-      #BinaryMediaTypes:
-      #  - '*~1*'
       EndpointConfiguration:
         Types:
           - ${self:custom.endpointType}
