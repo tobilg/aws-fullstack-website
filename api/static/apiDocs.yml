@@ -1,0 +1,85 @@
+openapi: 3.0.0
+info:
+  title: "AWS Fullstack Website API"
+  description: "Additional information resources for this API can be found below:\n-"
+  version: "1.0"
+  contact:
+    email: contact@yourdomain.test
+  license:
+    name: "MIT"
+
+servers:
+  - url: "https://{domain}/{version}"
+    description: "AWS Fullstack Website API server"
+    variables:
+      domain:
+        default: yourdomain.test
+      version:
+        default: v1
+
+paths:
+  /api-docs:
+    get:
+      summary: "Retrieve the OpenAPI v3.0 specification."
+      responses:
+        200:
+          description: "Return the api docs"
+          content:
+            application/x-yaml:
+              examples:
+                get-response:
+                  $ref: "#/components/examples/apiDocsResponse"
+        500:
+          description: "Default AWS error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/defaultError"
+      tags:
+        - "Documentation"
+
+  /info:
+    get:
+      summary: "Retrieve API version information."
+      responses:
+        200:
+          description: "Get API version info."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/infoResponse"
+        500:
+          description: "Default error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/defaultError"
+      tags:
+        - "Documentation"
+
+components:
+  schemas:
+    defaultError:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
+    infoResponse:
+      description: "Response for API version information request"
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        version:
+          type: string
+  examples:
+    apiDocsResponse:
+      summary: "Response in case getting the api doc is successful"
+      value: "openapi: 3.0.0 ..."
+    emptyResponse:
+      summary: "Response in case the querying the schema returns no data"
+      value: "{}"

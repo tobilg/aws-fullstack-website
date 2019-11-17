@@ -1,0 +1,27 @@
+{
+  "name": "aws-fullstack-website",
+  "version": "0.1.0",
+  "description": "Deploy your fullstack websites without all the hassle on AWS with CloudFront, S3, ACM, Route53, API Gateway and Lambda via Serverless",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tobilg/aws-fullstack-website.git"
+  },
+  "author": "TobiLG <tobilg@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tobilg/aws-fullstack-website/issues"
+  },
+  "homepage": "https://github.com/tobilg/aws-fullstack-website#readme",
+  "devDependencies": {
+    "serverless-cloudfront-invalidate": "^1.3.0",
+    "serverless-pseudo-parameters": "^2.4.0",
+    "serverless-s3-sync": "^1.8.0",
+    "serverless-stack-output": "^0.2.3"
+  },
+  "dependencies": {
+    "lambda-api": "^0.10.2"
+  }
+}

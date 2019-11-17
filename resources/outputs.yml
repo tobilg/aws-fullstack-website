@@ -1,0 +1,11 @@
+Outputs:
+  CloudFrontDistributionId:
+    Description: CloudFront distribution id
+    Value:
+      Ref: CFDistribution
+  HostedZoneNameservers:
+    Description: The nameservers for the Hosted Zone (to be used with your external DNS configuration)
+    Value:
+      'Fn::Join':
+        - ', '
+        - 'Fn::GetAtt': ['HostedZone', 'NameServers']

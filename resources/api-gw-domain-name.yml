@@ -1,0 +1,6 @@
+Resources:
+  ApiDomainName:
+    Type: AWS::ApiGateway::DomainName
+    Properties: 
+      CertificateArn: '#{SSLCertificate}'
+      DomainName: 'api.${opt:domain}'

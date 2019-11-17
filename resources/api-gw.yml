@@ -1,0 +1,12 @@
+# Create the API Gateway instance
+# See https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html
+Resources:
+  ApiGatewayRestApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: '${self:custom.domainName} API'
+      #BinaryMediaTypes:
+      #  - '*~1*'
+      EndpointConfiguration:
+        Types:
+          - ${self:custom.endpointType}
