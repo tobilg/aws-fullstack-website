@@ -42,10 +42,6 @@ provider:
   name: aws
   runtime: nodejs10.x
   region: ${opt:region, 'us-east-1'}
-  # Deployment bucket settings
-  deploymentBucket:
-    name: 'serverless-deployment-bucket-562552715877'
-    serverSideEncryption: AES256
   # API Gateway settings
   apiGateway:
     restApiId: '#{ApiGatewayRestApi}'
